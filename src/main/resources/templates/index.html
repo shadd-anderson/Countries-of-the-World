@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Countries of the World</title>
+    <link rel="stylesheet" th:href="@{css/normalize.css}"/>
+    <link rel="stylesheet" th:href="@{css/styles.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300" rel="stylesheet"/>
+</head>
+<body>
+    <header class="header"><span><img src="img/earth-md.png" class="earth" alt="Earth"/><a href="/">Countries of the World</a><img src="img/earth-md.png" class="earth" alt="Earth"/></span></header>
+    <div class="container">
+        <div class="sort">
+            <h4>Sort By:</h4>
+            <a href="/by-population">Population</a> | <a href="/by-name">Name</a>
+        </div>
+        <div th:each="country:${countries}">
+            <a th:href="@{'/'+${country.slug}}">
+                <div class="country-tab">
+                        <img th:src="@{'img/' + ${country.flagName} + '.svg'}" alt="Flag" class="flag"/>
+                        <span class="name"><h2 th:text="${country.name}">Country</h2></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <footer class="footer">Created by Shadd Anderson | 2016</footer>
+</body>
+</html>

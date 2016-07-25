@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+}
+
+.header,
+.footer {
+    text-align: center;
+    width: 100%;
+
+}
+
+.header span {
+    display: inline-block;
+}
+
+.footer {
+    background: #009900;
+    font-size: 18px;
+    padding: 27.5px 0;
+    height: 75px;
+}
+
+.header,
+.header a{
+    height: 125px;
+    color: white;
+    font-size: 48px;
+    background: #0073e6;
+    padding: 30px 0;
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+ }
+
+.container {
+    width: 80%;
+    min-height: 467px;
+    margin: 10px auto 32.5px;
+}
+
+.earth {
+    height: 40px;
+    width: 40px;
+    margin: 0 20px;
+    padding: 5px 2.5px 0;
+}
+
+.country-tab {
+    height: 150px;
+    border: solid black 5px;
+    border-radius: 15px;
+    margin: 10px 0;
+    background: #ccc;
+    padding: 32.5px 32.5px;
+}
+
+.country-tab:hover {
+    background: #aaa;
+}
+
+.name {
+    display: inline-block;
+    padding: 5px 0;
+    margin-left: 25px;
+}
+
+.flag {
+    height: 75px;
+    width: 150px;
+    display: inline-block;
+    float: left;
+}
+
+.sort {
+    text-align: right;
+}
+
+.detail-flag {
+    max-height: 300px;
+    max-width: 600px;
+}

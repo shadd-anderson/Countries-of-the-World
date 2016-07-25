@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title th:text="${country.name}">Countries of the World</title>
+        <link rel="stylesheet" th:href="@{css/normalize.css}"/>
+        <link rel="stylesheet" th:href="@{css/styles.css}"/>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300" rel="stylesheet"/>
+    </head>
+    <body>
+        <header class="header"><span><img src="img/earth-md.png" class="earth" alt="Earth"/><a href="/">Countries of the World</a><img src="img/earth-md.png" class="earth" alt="Earth"/></span></header>
+        <div class="container">
+            <h1 class="title" th:text="${country.name}" style="text-align: center">Country Name</h1>
+            <div class="details">
+                <div class="country-flag">
+                    <h2 th:text="${country.name} + ' flag'">Flag Description</h2>
+                    <img th:src="@{'img/' + ${country.flagName} + '.svg'}" alt="Flag" class="detail-flag"/>
+                </div>
+                <div class="country-population">
+                    <h2 th:text="${country.name} + ' population'"></h2>
+                    <h3 th:text="${country.population}">Population</h3>
+                </div>
+                <div class="country-language">
+                    <h2 th:text="${country.name} + ' language' + (${country.multipleLang} ? 's':'')"></h2>
+                    <ul>
+                        <li th:each="language:${country.languages}">
+                            <h3 th:text="${language}"></h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="country-capitol">
+                    <h2 th:text="${country.name} + ' capitol' + (${country.multipleCap} ? 's': '')"></h2>
+                    <ul>
+                        <li th:each="capitol:${country.capitol}">
+                            <h3 th:text="${capitol}"></h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">Created by Shadd Anderson | 2016</footer>
+    </body>
+</html>
